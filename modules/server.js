@@ -11,7 +11,7 @@ function start() {
   response.writeHead(200, {"Content-Type": "text/plain; charset=utf-8"});
  
 
-  switch (request.url) { // switch rozróżniający zapytania
+  switch (request.url) { 
         case '/':
         case '/start':
             handlers.welcome(request, response);
@@ -19,6 +19,9 @@ function start() {
         case '/upload':
             handlers.upload(request, response);
             break;
+        case '/show':
+            handlers.show(request, response);
+        break;
         default:
             handlers.error(request, response);
     }
